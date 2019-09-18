@@ -7,6 +7,9 @@
   <meta name="description" content="Workbook Zentrum elektronische Medien">
   <meta name="Adam Dolinsky" content="Mediamatiker in Ausbildung">
 
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/wappen-ch-300x300.png" type="image/x-icon"/>
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/wappen-ch-300x300.png" type="image/x-icon"/>
+
   <style>
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -978,85 +981,24 @@ input[type="submit"].secondary:focus {
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo-zem-2.svg" class="logo-zem-header">
         <h1 class="mainpage-h1">archiv der workbooks</h1>
       </div>
-      <p class="mainpage-p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+      <p class="mainpage-p">
+	  
+	  <?php
+		// Show the selected front page content.
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/page/content', 'front-page' );
+			endwhile;
+		else :
+			get_template_part( 'template-parts/post/content', 'none' );
+		endif;
+		?>
+
+	  </p>
       <section class="accordion arrows">
 
-        <input type="radio" name="accordion" id="cb1" />
-        <section class="box">
-          <label class="box-title" for="cb1">Betrieb und Armee</label>
-          <label class="box-close" for="acc-close"></label>
-          <div class="box-content">
-            <div>
-              <a href="#"><div class="box-box-title" style="background: black url('<?php echo get_template_directory_uri(); ?>/img/dummy1.jpg') repeat center;">Bedrohungsstufen</div></a>
-            </div>
-            <div>
-              <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy2.jpg') repeat center;">Kategorien</div></a>
-            </div>
-            <div>
-              <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy3.jpg') repeat center;">Logistikcentren</div></a>
-            </div>
-          </div>
-        </section>
-
-        <input type="radio" name="accordion" id="cb2" />
-        <section class="box">
-          <label class="box-title" for="cb2">Ausbildung</label>
-          <label class="box-close" for="acc-close"></label>
-          <div class="box-content">
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy4.jpg') repeat center;">Bedrohungsstufen</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy1.jpg') repeat center;">Kategorien</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy2.jpg') repeat center;">Logistikcentren</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy3.jpg') repeat center;">Planung</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy4.jpg') repeat center;">Selbstständigkeit</div></a>
-              </div>
-          </div>
-        </section>
-
-        <input type="radio" name="accordion" id="cb3" />
-        <section class="box">
-          <label class="box-title" for="cb3">Stagen</label>
-          <label class="box-close" for="acc-close"></label>
-          <div class="box-content">
-              <div>
-                  <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy1.jpg') repeat center;">Einstieg Mediamatik</div></a>
-              </div>
-              <div>
-                  <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy2.jpg') repeat center;">Print</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy3.jpg') repeat center;">Programmieren</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy4.jpg') repeat center;">Interaktivität</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy1.jpg') repeat center;">Netzwerke</div></a>
-              </div>
-          </div>
-        </section>
-
-        <input type="radio" name="accordion" id="cb4" />
-        <section class="box">
-          <label class="box-title" for="cb4">Sonstiges</label>
-          <label class="box-close" for="acc-close"></label>
-          <div class="box-content">
-              <div>
-                  <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy2.jpg') repeat center;">Highlights</div></a>
-              </div>
-              <div>
-                <a href="#"><div class="box-box-title" style="background: url('<?php echo get_template_directory_uri(); ?>/img/dummy3.jpg') repeat center;">Erwartungen</div></a>
-              </div>
-          </div>
-        </section>
+        <?php wp_list_categories() ?>
     
         <input type="radio" name="accordion" id="acc-close" />
       </section>
@@ -1064,3 +1006,5 @@ input[type="submit"].secondary:focus {
   </div>
 </body>
 </html>
+
+

@@ -2196,9 +2196,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .taxonomy-description {
-	color: #666;
+	color: indianred !important;
 	font-size: 13px;
 	font-size: 0.8125rem;
+	width: 85%;
 }
 
 /* More tag */
@@ -4067,7 +4068,7 @@ p > object:only-child {
 		margin-top: 0;
 		margin-left: 1em;
 	}
-
+	
 	/* Entry content */
 
 	/* without sidebar */
