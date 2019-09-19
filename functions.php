@@ -20,6 +20,10 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+
+
+
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -369,8 +373,23 @@ function twentyseventeen_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar( 
+		array(
+			'name' => 'Front Page Widget Area',
+			'id' => 'front_page_widget_area',
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>'
+		)
+	);
+
+
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
+
+
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
@@ -641,6 +660,8 @@ function twentyseventeen_unique_id( $prefix = '' ) {
 	return $prefix . (string) ++$id_counter;
 }
 
+
+
 /**
  * Implement the Custom Header feature.
  */
@@ -665,4 +686,18 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'name' => 'Name of Widgetized Area',
+    'before_widget' => '<div class = "widgetizedArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
+
+
 
