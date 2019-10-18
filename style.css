@@ -84,6 +84,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 
+#media_image-6 {
+	float: right;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	#media_image-6, .wp-image-105 {
+		width: 200px;
+		float: left;
+	}
+}
+
+
 
 .float-right {
 	float: right;
@@ -151,6 +165,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   font-family: "f-roman";
   src: url(fonts/FrutigerLTStd-Roman.otf) format("opentype");
 }
+
+
 
 
 
