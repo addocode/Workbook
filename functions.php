@@ -488,6 +488,36 @@ function twentyseventeen_scripts() {
 	wp_enqueue_style( 'twentyseventeen-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'twentyseventeen-style' ), '1.0' );
 	wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
 
+
+
+
+
+
+
+	/* 1. Bootstrap CSS */
+	// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.1.0' );
+
+	/* 2. Bootstrap JS */
+	// wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '4.1.0',  true );
+
+
+	/* Theme CSS */
+	// wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri(), array( 'bootstrap' ), '1.0.0' );
+	
+	/* Bootstrap CSS */
+	// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.1.0' );
+
+	/* Bootstrap JS */
+	// wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '4.1.0',  true );
+	
+	
+
+
+
+
+
+
+
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );

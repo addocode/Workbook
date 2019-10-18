@@ -11,6 +11,14 @@
  */
 
 get_header(); ?>
+<style>
+	@media screen and (min-width: 768px) {
+			.site-main article:hover {
+				background-color: rgb(237,237,237);
+				transition: 0.2s all;
+			}
+		}
+</style>
 
 <div class="wrap wrap-shadow-search">
 

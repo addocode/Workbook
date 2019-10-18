@@ -96,6 +96,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 
+
 @font-face {
   font-family: "f-black";
   src: url(fonts/FrutigerLTStd-Black.otf) format("opentype");
@@ -1998,6 +1999,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	background-color: #F2EFE8;
 	position: relative;
 	background-image: url('../../../wp-content/uploads/2019/08/bg-striped.png');
+	background-attachment: fixed !important;
 }
 
 .site-content {
@@ -3967,11 +3969,8 @@ p > object:only-child {
 		/* font-size: 1.625rem; */
 		color:  white;
 		
-		background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
-		background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 72%,rgba(0,0,0,0) 100%);
-		background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 72%,rgba(0,0,0,0) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
-
+		background-color: black;
+		box-shadow: 6px -6px 0px 2px rgba(255,255,255,1);
 
 		
 		display: block;

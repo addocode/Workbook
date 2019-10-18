@@ -19,6 +19,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
+<style>
+
+	@media screen and (min-width: 768px) {
+		.site-main article {
+			background-color: rgb(247,247,247);
+			padding: 20px;
+			border-radius: 4px;
+			margin: 18px 0 30px 0;
+			transition: 0.2s all;
+		}
+	}
+
+	
+</style>
+
+
 <?php wp_head(); ?>
 </head>
 
